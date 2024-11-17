@@ -8,14 +8,16 @@
  *
  * @author admin
  */
-import javax.swing.SwingUtilities;
+import java.io.IOException;
+import javax.swing.JFrame;
 
-public class AdmissionFormMain {
-    public static void main(String[] args)
+public class AdmissionFormMain
+{
+    public static void main(String[] args) throws IOException
     {
-        // Use SwingUtilities.invokeLater to ensure GUI components are created on the Event Dispatch Thread (EDT)
-        SwingUtilities.invokeLater(() -> new VarsityAdmissionForm(600, 700));
+        VarsityAdmissionForm admissionForm = new VarsityAdmissionForm(1100, 900);
+        admissionForm.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        admissionForm.frame.setSize(1100, 900);
+        admissionForm.frame.setVisible(true);
     }
 }
-
-
